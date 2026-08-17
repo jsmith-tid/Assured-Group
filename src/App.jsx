@@ -153,8 +153,7 @@ const servicePages = {
 };
 
 function go(path) {
-  window.history.pushState({}, "", path);
-  window.dispatchEvent(new PopStateEvent("popstate"));
+  window.location.hash = path;
   window.scrollTo(0, 0);
 }
 
@@ -162,7 +161,7 @@ function Link({ href, children, className }) {
   return (
     <a
       className={className}
-      href={href}
+      href={`#${href}`}
       onClick={(event) => {
         event.preventDefault();
         go(href);
@@ -393,11 +392,12 @@ function Footer() {
 }
 
 function App() {
-  const [path, setPath] = React.useState(window.location.pathname);
+  const readHashPath = () => window.location.hash.replace(/^#/, "") || "/";
+  const [path, setPath] = React.useState(readHashPath);
   React.useEffect(() => {
-    const update = () => setPath(window.location.pathname);
-    window.addEventListener("popstate", update);
-    return () => window.removeEventListener("popstate", update);
+    const update = () => setPath(readHashPath());
+    window.addEventListener("hashchange", update);
+    return () => window.removeEventListener("hashchange", update);
   }, []);
 
   let page = <HomePage />;
