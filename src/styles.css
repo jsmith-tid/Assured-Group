@@ -181,6 +181,7 @@ h3 {
   padding: 12px 20px;
   border: 1px solid var(--green);
   font-size: 14px;
+  width: fit-content;
 }
 
 .button.primary,
@@ -295,6 +296,10 @@ h3 {
 .role {
   color: var(--green-dark) !important;
   font-weight: 700;
+}
+
+.bobBand .button {
+  margin-top: 18px;
 }
 
 .contactGrid {

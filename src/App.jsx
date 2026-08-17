@@ -33,12 +33,10 @@ const nav = [
     label: "Mortgages",
     href: "/mortgages/",
     children: [
-      ["Mortgage Broker Nelson", "/mortgages/nelson/"],
       ["First Home Buyers", "/mortgages/first-home-buyers/"],
       ["Refinancing", "/mortgages/refinancing/"],
       ["Investment Property", "/mortgages/investment-property/"],
       ["Bridging Loans", "/mortgages/bridging-loans/"],
-      ["Commercial / Business Finance", "/mortgages/commercial-business-finance/"],
     ],
   },
   {
@@ -64,19 +62,13 @@ const nav = [
   {
     label: "About Bob",
     href: "/about-bob/",
-    children: [
-      ["Bob Llewellyn", "/about-bob/"],
-      ["Why use an adviser?", "/about-bob/why-use-an-adviser/"],
-      ["How the process works", "/about-bob/process/"],
-      ["Disclosure / regulatory information", "/about-bob/disclosure/"],
-    ],
   },
   {
     label: "Resources",
     href: "/resources/",
     children: [
       ["FAQs", "/resources/faqs/"],
-      ["Useful guides / articles", "/resources/guides/"],
+      ["Guides", "/resources/guides/"],
     ],
   },
   { label: "Contact", href: "/contact/" },
@@ -91,15 +83,7 @@ const pageCopy = {
     image: assets.financeHero,
     icon: Home,
     sections: ["Home Loans", "First Home Buyers", "Refinancing", "Investment Property"],
-  },
-  "/mortgages/nelson/": {
-    eyebrow: "Mortgage Broker Nelson",
-    title: "A local mortgage adviser who knows the Nelson market.",
-    intro:
-      "Talk with Bob about borrowing options, pre-approval, refinancing and lender choice, with advice shaped around Nelson, Richmond and wider Tasman buyers.",
-    image: assets.financeHero,
-    icon: Home,
-    sections: ["Pre-approval", "Deposit options", "Lender selection", "Negotiation support"],
+    cta: "Talk to Bob about your mortgage options",
   },
   "/insurance/": {
     eyebrow: "Insurance Advice",
@@ -109,6 +93,7 @@ const pageCopy = {
     image: assets.homeHero,
     icon: HeartPulse,
     sections: ["Life Insurance", "Health Insurance", "Income Protection", "Trauma Cover"],
+    cta: "Talk to Bob about your insurance options",
   },
   "/business/": {
     eyebrow: "Business Advice",
@@ -118,6 +103,7 @@ const pageCopy = {
     image: assets.financeHero,
     icon: BriefcaseBusiness,
     sections: ["Key Person Insurance", "Business Protection", "Commercial Finance", "Succession planning"],
+    cta: "Talk to Bob about protecting your business",
   },
   "/about-bob/": {
     eyebrow: "Bob Llewellyn",
@@ -127,29 +113,26 @@ const pageCopy = {
     image: assets.bob,
     icon: UserRound,
     sections: ["Financial & Mortgage Adviser", "Life and Risk Insurance Adviser", "FSP No: 99484", "Nelson and Tasman focused"],
+    cta: "Talk to Bob about working with an adviser",
   },
 };
 
 const servicePages = {
-  "/mortgages/first-home-buyers/": ["First Home Buyers", "Buying your first home is easier when someone explains deposits, approvals, grants and lender expectations in plain language."],
-  "/mortgages/refinancing/": ["Refinancing", "Review your current lending, compare options and understand whether switching could put you in a stronger position."],
-  "/mortgages/investment-property/": ["Investment Property", "Shape lending around your property goals, cash flow and long-term investment strategy."],
-  "/mortgages/bridging-loans/": ["Bridging Loans", "Bridge the gap between buying and selling with advice on structure, repayments and lender requirements."],
-  "/mortgages/commercial-business-finance/": ["Commercial / Business Finance", "Access lending options for business growth, property purchase, cash flow and refinancing."],
-  "/insurance/life/": ["Life Insurance", "Protect your family and financial commitments with cover that reflects your situation and priorities."],
-  "/insurance/health/": ["Health Insurance", "Compare health insurance options and choose cover that supports access to care when it matters."],
-  "/insurance/income-protection/": ["Income Protection", "Plan for the financial impact of illness or injury affecting your ability to work."],
-  "/insurance/mortgage-protection/": ["Mortgage Protection", "Help keep home loan repayments manageable if life takes an unexpected turn."],
-  "/insurance/trauma/": ["Trauma Insurance", "Create a lump-sum safety net for serious health events and recovery time."],
-  "/business/key-person-insurance/": ["Key Person Insurance", "Protect the business impact of losing a key owner, operator or revenue-generating person."],
-  "/business/business-protection/": ["Business Protection", "Build insurance arrangements around ownership, continuity and future planning."],
-  "/business/commercial-finance/": ["Commercial Finance", "Find commercial lending options for Nelson and Tasman businesses."],
-  "/about-bob/why-use-an-adviser/": ["Why use an adviser?", "A good adviser helps compare options, explain trade-offs and save clients from dealing with lenders and insurers alone."],
-  "/about-bob/process/": ["How the process works", "Start with a conversation, clarify the goal, compare suitable options and move forward with a clear recommendation."],
-  "/about-bob/disclosure/": ["Disclosure / regulatory information", "A prototype page for disclosure information, adviser details and regulatory material."],
-  "/resources/": ["Resources", "Useful guides and answers for mortgage, insurance and business finance questions."],
-  "/resources/faqs/": ["FAQs", "Clear answers to common questions about working with Bob and Assured Group."],
-  "/resources/guides/": ["Useful guides / articles", "A small library of genuinely useful local finance and insurance guides."],
+  "/mortgages/first-home-buyers/": ["First Home Buyers", "Buying your first home is easier when someone explains deposits, approvals, grants and lender expectations in plain language.", "Talk to Bob about buying your first home"],
+  "/mortgages/refinancing/": ["Refinancing", "Review your current lending, compare options and understand whether switching could put you in a stronger position.", "Talk to Bob about refinancing"],
+  "/mortgages/investment-property/": ["Investment Property", "Shape lending around your property goals, cash flow and long-term investment strategy.", "Talk to Bob about investment property lending"],
+  "/mortgages/bridging-loans/": ["Bridging Loans", "Bridge the gap between buying and selling with advice on structure, repayments and lender requirements.", "Talk to Bob about bridging finance"],
+  "/insurance/life/": ["Life Insurance", "Protect your family and financial commitments with cover that reflects your situation and priorities.", "Talk to Bob about life insurance"],
+  "/insurance/health/": ["Health Insurance", "Compare health insurance options and choose cover that supports access to care when it matters.", "Talk to Bob about health insurance"],
+  "/insurance/income-protection/": ["Income Protection", "Plan for the financial impact of illness or injury affecting your ability to work.", "Talk to Bob about income protection"],
+  "/insurance/mortgage-protection/": ["Mortgage Protection", "Help keep home loan repayments manageable if life takes an unexpected turn.", "Talk to Bob about mortgage protection"],
+  "/insurance/trauma/": ["Trauma Insurance", "Create a lump-sum safety net for serious health events and recovery time.", "Talk to Bob about trauma insurance"],
+  "/business/key-person-insurance/": ["Key Person Insurance", "Protect the business impact of losing a key owner, operator or revenue-generating person.", "Talk to Bob about key person insurance"],
+  "/business/business-protection/": ["Business Protection", "Build insurance arrangements around ownership, continuity and future planning.", "Talk to Bob about business protection"],
+  "/business/commercial-finance/": ["Commercial Finance", "Find commercial lending options for Nelson and Tasman businesses.", "Talk to Bob about commercial finance"],
+  "/resources/": ["Resources", "Useful guides and answers for mortgage, insurance and business finance questions.", "Talk to Bob about your finance or insurance questions"],
+  "/resources/faqs/": ["FAQs", "Clear answers to common questions about working with Bob and Assured Group.", "Talk to Bob about your questions"],
+  "/resources/guides/": ["Guides", "A small library of genuinely useful local finance and insurance guides.", "Talk to Bob about the right next step"],
 };
 
 function go(path) {
@@ -222,18 +205,19 @@ function Hero({ page }) {
   );
 }
 
-function BobPanel() {
+function BobPanel({ cta = "Talk to Bob about finance or insurance" }) {
   return (
     <section className="bobBand">
       <div className="bobWrap">
         <img src={assets.bob} alt="Bob Llewellyn, Assured Group adviser" />
         <div>
           <p className="eyebrow">Contact our adviser</p>
-          <h2>Bob Llewellyn</h2>
+          <h2>{cta}</h2>
           <p className="role">Financial & Mortgage Adviser | Life and Risk Insurance Adviser</p>
           <p>
             Bob is the central point of contact for advice across mortgages, insurance and business finance. He works locally with Nelson, Richmond and Tasman clients.
           </p>
+          <Link href="/contact/" className="button primary">Contact Bob <ArrowRight size={16} /></Link>
           <div className="contactGrid">
             <span><Phone size={16} /> 0800 500 223</span>
             <span><Phone size={16} /> 021 544 150</span>
@@ -278,7 +262,7 @@ function HomePage() {
         </div>
       </section>
       <Process />
-      <BobPanel />
+      <BobPanel cta="Talk to Bob about finance or insurance" />
     </>
   );
 }
@@ -324,12 +308,12 @@ function LandingPage({ page }) {
           ))}
         </div>
       </section>
-      <BobPanel />
+      <BobPanel cta={page.cta} />
     </>
   );
 }
 
-function DetailPage({ title, intro }) {
+function DetailPage({ title, intro, cta }) {
   return (
     <>
       <Hero page={{ eyebrow: "Assured Group", title, intro, image: assets.financeHero }} />
@@ -343,7 +327,7 @@ function DetailPage({ title, intro }) {
         </p>
         <Link href="/contact/" className="button primary">Talk To Bob <ArrowRight size={16} /></Link>
       </section>
-      <BobPanel />
+      <BobPanel cta={cta} />
     </>
   );
 }
@@ -361,7 +345,7 @@ function ContactPage() {
         <form>
           <input placeholder="Name" />
           <input placeholder="Email" />
-          <input placeholder="Subject" />
+          <input placeholder="What can we help you with?" />
           <input placeholder="Phone" />
           <textarea placeholder="Message" rows="5" />
           <button type="button">Submit</button>
@@ -403,7 +387,7 @@ function App() {
   let page = <HomePage />;
   if (path === "/contact/") page = <ContactPage />;
   else if (pageCopy[path]) page = <LandingPage page={pageCopy[path]} />;
-  else if (servicePages[path]) page = <DetailPage title={servicePages[path][0]} intro={servicePages[path][1]} />;
+  else if (servicePages[path]) page = <DetailPage title={servicePages[path][0]} intro={servicePages[path][1]} cta={servicePages[path][2]} />;
   else if (path !== "/") page = <DetailPage title="Assured Group" intro="Prototype page for the proposed Assured Group website structure." />;
 
   return (
