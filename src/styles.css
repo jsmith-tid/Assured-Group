@@ -198,7 +198,9 @@ h3 {
 .introBand,
 .contentGrid,
 .contactPage,
-.article {
+.article,
+.serviceDirectory,
+.partners {
   width: min(1120px, calc(100% - 48px));
   margin: 0 auto;
 }
@@ -251,6 +253,39 @@ h3 {
 .serviceCard p {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.serviceDirectory {
+  padding: 10px 0 76px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.infoCard {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 26px;
+  min-height: 224px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: .18s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 32px rgba(30, 40, 48, .08);
+}
+
+.infoCard svg {
+  color: var(--aqua);
+}
+
+.infoCard p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.62;
 }
 
 .process {
@@ -344,6 +379,34 @@ h3 {
   max-width: 820px;
 }
 
+.article .button {
+  margin-top: 28px;
+}
+
+.faqList {
+  display: grid;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.faqList div,
+.disclosureBlock {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+
+.partners {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 46px 0;
+}
+
+.partners p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 900px;
+}
+
 .contactPage {
   padding: 74px 0;
   display: grid;
@@ -407,6 +470,12 @@ footer img {
   margin-bottom: 12px;
 }
 
+.footerLink {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--green-dark);
+}
+
 @media (max-width: 960px) {
   .masthead {
     position: relative;
@@ -427,6 +496,7 @@ footer img {
 
   .introText,
   .serviceCards,
+  .serviceDirectory,
   .process,
   .bobWrap,
   .contentGrid,
@@ -449,6 +519,8 @@ footer img {
   .contentGrid,
   .contactPage,
   .article,
+  .serviceDirectory,
+  .partners,
   .bobWrap {
     width: min(100% - 32px, 1120px);
   }
