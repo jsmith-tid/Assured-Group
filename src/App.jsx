@@ -9,10 +9,12 @@ import {
   HeartPulse,
   Home,
   Mail,
+  Menu,
   MapPin,
   Phone,
   ShieldCheck,
   UserRound,
+  X,
 } from "lucide-react";
 import "./styles.css";
 
@@ -363,7 +365,7 @@ function go(path) {
   window.scrollTo(0, 0);
 }
 
-function Link({ href, children, className }) {
+function Link({ href, children, className, onNavigate }) {
   return (
     <a
       className={className}
@@ -371,6 +373,7 @@ function Link({ href, children, className }) {
       onClick={(event) => {
         event.preventDefault();
         go(href);
+        onNavigate?.();
       }}
     >
       {children}
@@ -379,6 +382,9 @@ function Link({ href, children, className }) {
 }
 
 function Header() {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header>
       <div className="topbar">
@@ -389,7 +395,17 @@ function Header() {
         <Link href="/" className="logoLink">
           <img src={assets.logo} alt="Assured Group Insurance and Finance" />
         </Link>
-        <nav>
+        <button
+          className="mobileToggle"
+          type="button"
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          <span>Menu</span>
+        </button>
+        <nav className="desktopNav">
           <Link href="/" className="navItem">Home</Link>
           {nav.map((item) => (
             <div className="navGroup" key={item.label}>
@@ -408,6 +424,23 @@ function Header() {
           ))}
         </nav>
       </div>
+      {menuOpen && (
+        <nav className="mobileNav" aria-label="Mobile navigation">
+          <Link href="/" className="mobileNavItem" onNavigate={closeMenu}>Home</Link>
+          {nav.map((item) => (
+            <div className="mobileNavGroup" key={item.label}>
+              <Link href={item.href} className="mobileNavItem" onNavigate={closeMenu}>{item.label}</Link>
+              {item.children && (
+                <div className="mobileSubnav">
+                  {item.children.map(([label, href]) => (
+                    <Link href={href} key={href} onNavigate={closeMenu}>{label}</Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }
