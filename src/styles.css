@@ -886,6 +886,85 @@ footer img {
   background: var(--pale);
 }
 
+.firstHomeHero {
+  min-height: 540px;
+}
+
+.firstHomeDecisions,
+.firstHomePreapproval {
+  background: var(--pale);
+}
+
+.firstHomeDecisionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 38px;
+}
+
+.firstHomeDecisionGrid article {
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.firstHomeDecisionGrid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.firstHomeProcess {
+  background: #fff;
+}
+
+.firstHomeProcessList li:last-child {
+  grid-column: 1 / -1;
+}
+
+.firstHomePreapproval .nelsonSectionIntro {
+  max-width: 850px;
+}
+
+.firstHomeAdviserValue {
+  background: #fff;
+}
+
+.refinancingOptions,
+.refinancingDecision {
+  background: var(--pale);
+}
+
+.refinancingDecision .nelsonSectionIntro {
+  max-width: 850px;
+}
+
+.investorNeeds,
+.borrowingCapacity {
+  background: var(--pale);
+}
+
+.borrowingCapacity .nelsonSectionIntro,
+.investmentAdviceBoundary .nelsonSectionIntro {
+  max-width: 850px;
+}
+
+.investmentAdviceBoundary {
+  background: #eef4f0;
+}
+
+.bridgingSituations,
+.bridgingConsiderations,
+.bridgingAdvice {
+  background: var(--pale);
+}
+
+.bridgingDecision .nelsonSectionIntro,
+.bridgingAdvice .nelsonSectionIntro {
+  max-width: 850px;
+}
+
 .lifeInsuranceRelatedGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1120,6 +1199,10 @@ footer img {
   .lifeInsuranceRelatedGrid {
     grid-template-columns: 1fr;
   }
+
+  .firstHomeDecisionGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 620px) {
@@ -1224,6 +1307,7 @@ footer img {
   .homeHubServiceGrid,
   .homeHubQuickGrid,
   .lifeInsuranceRelatedGrid,
+  .firstHomeDecisionGrid,
   .nelsonProcessList {
     grid-template-columns: 1fr;
   }
@@ -1271,6 +1355,10 @@ footer img {
   .nelsonProcessList li {
     min-height: 0;
     padding: 24px;
+  }
+
+  .firstHomeProcessList li:last-child {
+    grid-column: auto;
   }
 
   .nelsonAdviserGrid {

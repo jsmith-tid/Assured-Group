@@ -909,6 +909,519 @@ function NelsonMortgagePage() {
   );
 }
 
+const firstHomeBuyerProcess = [
+  ["Understand your starting position", "We begin with your income, deposit, commitments, spending and what you hope to buy."],
+  ["Explore your borrowing options", "We consider appropriate lending options and help you understand the factors likely to affect an application."],
+  ["Prepare for approval", "We help you assemble the financial information required and work through the application process."],
+  ["Find the right property", "With a clearer understanding of your financial position, you can search with a more realistic idea of your budget."],
+  ["Finalise the lending", "When you are ready to proceed with a property, we can help with the lending steps needed to move the purchase forward."],
+];
+
+const firstHomeBuyerFaqs = [
+  ["When should I speak to a mortgage adviser?", "Ideally before you become committed to a particular property. Understanding your financial position early can help you search within a more realistic price range and identify potential lending issues before they become urgent."],
+  ["How much can I borrow for my first home?", "That depends on your individual circumstances and the lender's criteria. Factors can include your income, deposit, regular spending, debts and other financial commitments."],
+  ["How much deposit do I need?", "The amount required can depend on the property, lender, type of borrowing and your individual circumstances. Rather than assuming a particular figure, talk to us about the funds you have available and the home you hope to buy."],
+  ["What is mortgage pre-approval?", "Pre-approval generally indicates that a lender is prepared to consider lending up to an agreed level, subject to its stated conditions and any further checks required. It is important to understand the conditions attached to any approval before relying on it."],
+  ["Should I choose the mortgage with the lowest interest rate?", "Interest rates are important, but they are not the only consideration. Loan structure, flexibility, fees, lending criteria and your longer-term needs can also matter."],
+  ["Can Assured help if I'm buying outside Nelson?", "Yes. Assured Group is based in Nelson but can work with first-home buyers elsewhere in New Zealand."],
+];
+
+function FirstHomeBuyersPage() {
+  return (
+    <>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/mortgages/">Mortgages</Link></li>
+          <li aria-current="page">First Home Buyers</li>
+        </ol>
+      </nav>
+
+      <section className="hero firstHomeHero" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.7) 52%, rgba(255,255,255,.18)), url("${assets.financeHero}")` }}>
+        <div className="heroInner">
+          <p className="eyebrow">Buying your first home</p>
+          <h1>First Home Buyer Mortgage Advice in Nelson</h1>
+          <p>Buying your first home is exciting, but the mortgage process can introduce a lot of unfamiliar decisions at once. Assured Group helps you understand what you may be able to borrow, prepare for an application and work through the lending process with confidence.</p>
+          <p className="hubHeroSupporting">Based in Nelson, we provide straightforward mortgage advice for first-home buyers locally and elsewhere in New Zealand.</p>
+          <div className="heroActions">
+            <Link href="/contact/" className="button primary">Talk to a mortgage adviser <ArrowRight size={16} /></Link>
+            <a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call us</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">Before you start looking</p>
+            <h2>Know where you stand before you find the house</h2>
+            <p>One of the most useful things a first-home buyer can do is understand their financial position before becoming committed to a particular property.</p>
+            <p>We can help you look at your income, deposit, existing commitments and likely borrowing requirements so that you have a clearer idea of what may be realistic.</p>
+          </div>
+          <div className="nelsonFeatureGrid">
+            <article><CircleDollarSign size={25} /><h3>Understand your budget</h3><p>Get a clearer picture of the level of borrowing that may be realistic before setting your property search range.</p></article>
+            <article><Home size={25} /><h3>Understand your deposit</h3><p>Look at the funds you have available and how your deposit fits into the overall lending picture.</p></article>
+            <article><CheckCircle2 size={25} /><h3>Prepare for the application</h3><p>Understand what lenders are likely to want to know about your income, spending, commitments and financial history.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection firstHomeDecisions">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <h2>There is more to a first mortgage than the interest rate</h2>
+            <p>A home loan is a long-term financial commitment. The amount borrowed matters, but so can the structure of the loan, the way repayments are managed and how much flexibility you may need in future.</p>
+            <p>Mortgage advice can help you consider those questions as a whole rather than concentrating only on the most visible headline rate.</p>
+          </div>
+          <div className="firstHomeDecisionGrid">
+            <article><h3>How much should you borrow?</h3><p>What a lender may be willing to lend and what you are comfortable committing to are not necessarily the same thing.</p></article>
+            <article><h3>How should the mortgage be structured?</h3><p>Different loan structures can affect repayments, flexibility and how your borrowing works over time.</p></article>
+            <article><h3>What will the lender consider?</h3><p>Lenders assess applications according to their own criteria, including income, spending, commitments, deposit and other financial information.</p></article>
+            <article><h3>What happens if your circumstances change?</h3><p>It is worth considering future affordability as well as whether the mortgage works for you today.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection firstHomeProcess">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">From planning to purchase</p>
+            <h2>Your first-home mortgage journey</h2>
+            <p>The exact process varies according to your circumstances, but we can help you understand what happens at each stage.</p>
+          </div>
+          <ol className="nelsonProcessList firstHomeProcessList">
+            {firstHomeBuyerProcess.map(([title, text], index) => <li key={title}><span aria-hidden="true">{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}
+          </ol>
+        </div>
+      </section>
+
+      <section className="nelsonSection firstHomePreapproval">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">Prepare before you offer</p>
+            <h2>Why speak to an adviser before making an offer?</h2>
+            <p>It can be tempting to begin with property listings and think about finance later. For many first-home buyers, reversing that order is more useful.</p>
+            <p>Understanding your likely borrowing position first can help you search within a realistic range, identify potential issues earlier and avoid making major decisions without knowing how the finance may work.</p>
+            <p>Any approval or indication from a lender will be subject to its own requirements and conditions, so it is important to understand exactly what has — and has not — been approved.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection firstHomeAdviserValue">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">Someone to help you through it</p>
+            <h2>Why use a mortgage adviser for your first home?</h2>
+            <p>First-home buyers are often dealing with lenders, legal processes and unfamiliar financial terminology for the first time.</p>
+            <p>An adviser can help you understand the lending side of that process, explain your options and provide a point of contact as your application progresses.</p>
+          </div>
+          <div className="nelsonFeatureGrid">
+            <article><UserRound size={25} /><h3>Ask questions</h3><p>Get explanations when something in the mortgage process is unfamiliar or unclear.</p></article>
+            <article><CheckCircle2 size={25} /><h3>Understand lender requirements</h3><p>Know what information is required and why it matters to the lending decision.</p></article>
+            <article><ShieldCheck size={25} /><h3>Have help through the application</h3><p>Work with someone who understands your circumstances instead of navigating the mortgage process alone.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection nelsonAdviser">
+        <div className="nelsonContainer nelsonAdviserGrid">
+          <img src={assets.bob} alt="Bob Llewellyn, mortgage adviser at Assured Group" />
+          <div>
+            <p className="eyebrow">Local mortgage advice</p>
+            <h2>Your first-home adviser in Nelson</h2>
+            <p>Assured Group is based in Nelson and provides personal mortgage and financial advice to clients locally and throughout New Zealand.</p>
+            <p>Clients currently work directly with Bob Llewellyn, a Nelson-based financial adviser and mortgage broker with more than 15 years' experience in financial services in New Zealand and the UK.</p>
+            <p>For a first-home buyer, that means having someone available to explain the process, answer questions and understand your application from the beginning.</p>
+            <Link className="nelsonTextLink" href="/about-bob/">Meet Bob <ArrowRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection lifeInsuranceRelated">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro"><h2>More mortgage advice</h2></div>
+          <div className="lifeInsuranceRelatedGrid">
+            <article className="nelsonServiceCard"><h3>Mortgage Broker Nelson</h3><p>Find out how Assured helps clients with home loans and mortgage advice in Nelson.</p><Link href="/mortgages/nelson/">Mortgage advice in Nelson <ArrowRight size={15} /></Link></article>
+            <article className="nelsonServiceCard"><h3>Mortgage Refinancing</h3><p>Already have a mortgage? Understand when reviewing or restructuring existing borrowing may be worthwhile.</p><Link href="/mortgages/refinancing/">Refinancing advice <ArrowRight size={15} /></Link></article>
+            <article className="nelsonServiceCard"><h3>Mortgage Protection</h3><p>Consider how your mortgage commitments could be managed if illness or injury affected your household income.</p><Link href="/insurance/mortgage-protection/">Mortgage protection advice <ArrowRight size={15} /></Link></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection nelsonFaq">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro"><h2>First-home buyer questions</h2></div>
+          <div className="nelsonFaqList">
+            {firstHomeBuyerFaqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonFinalCta">
+        <div className="nelsonContainer"><div className="nelsonCtaPanel">
+          <h2>Thinking about buying your first home?</h2>
+          <p>You don't need to wait until you've found a property. Talk to Assured about your deposit, borrowing position and what you need to do next.</p>
+          <div className="heroActions">
+            <Link href="/contact/" className="button primary">Talk to a mortgage adviser <ArrowRight size={16} /></Link>
+            <a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call 0800 500 223</a>
+          </div>
+        </div></div>
+      </section>
+    </>
+  );
+}
+
+const refinancingProcess = [
+  ["Review your current mortgage", "We start with your existing lending, repayment arrangements and the reasons you are considering a change."],
+  ["Understand your current circumstances", "We look at income, commitments, property plans and anything else that may affect what you need from your mortgage."],
+  ["Compare the available options", "We consider whether remaining with your current lender, restructuring the loan or refinancing elsewhere may be appropriate."],
+  ["Consider costs and trade-offs", "We explain the practical consequences of the options so that you can compare more than just headline rates."],
+  ["Make the change", "If you decide to proceed, Assured can help manage the lending application and refinancing process."],
+];
+
+const refinancingFaqs = [
+  ["What is mortgage refinancing?", "Mortgage refinancing generally means replacing or changing existing home lending. This may involve moving to another lender, although in some situations restructuring with the existing lender may be more appropriate."],
+  ["When should I review my mortgage?", "A review may be useful when a fixed term is ending, your circumstances have changed, you are considering other borrowing or you simply want to check whether your current mortgage still suits your needs."],
+  ["Will refinancing save me money?", "Not necessarily. Any potential saving needs to be considered alongside the costs of changing, the structure and term of the new lending and your wider financial circumstances."],
+  ["Do I need to change banks to refinance?", "No. Depending on your circumstances, changing the structure of your existing lending may be an alternative to moving to another lender."],
+  ["Can I refinance if my financial circumstances have changed?", "A lender will assess your current circumstances according to its own lending criteria. Changes in income, expenses, debts or employment may therefore affect the options available."],
+  ["Should I refinance when my fixed mortgage term ends?", "The end of a fixed term can be a useful time to review your arrangements, but it does not automatically mean refinancing is the best option. The wider mortgage and your future plans should also be considered."],
+  ["Can Assured help if I live outside Nelson?", "Yes. Assured Group is based in Nelson but works with mortgage clients elsewhere in New Zealand."],
+];
+
+function RefinancingPage() {
+  return (
+    <>
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/mortgages/">Mortgages</Link></li>
+          <li aria-current="page">Refinancing</li>
+        </ol>
+      </nav>
+
+      <section className="hero firstHomeHero" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.7) 52%, rgba(255,255,255,.18)), url("${assets.financeHero}")` }}>
+        <div className="heroInner">
+          <p className="eyebrow">Reviewing your home loan</p>
+          <h1>Mortgage Refinancing Advice in Nelson</h1>
+          <p>The mortgage you arranged several years ago may not still be the right fit today. Your income, priorities, property value and financial commitments may all have changed.</p>
+          <p className="hubHeroSupporting">Assured Group helps you review your existing mortgage, understand your refinancing options and decide whether changing lender, restructuring your borrowing or simply adjusting your current loan makes sense.</p>
+          <div className="heroActions">
+            <Link href="/contact/" className="button primary">Review your mortgage <ArrowRight size={16} /></Link>
+            <a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call us</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">When circumstances change</p>
+            <h2>Why review your mortgage?</h2>
+            <p>Refinancing is not automatically about finding a different lender. A mortgage review is an opportunity to look at your borrowing as a whole and ask whether it still suits your financial circumstances and plans.</p>
+          </div>
+          <div className="nelsonFeatureGrid refinancingFeatureGrid">
+            <article><CheckCircle2 size={25} /><h3>Your fixed term is ending</h3><p>A change in interest-rate arrangements can be a useful point to review your wider mortgage structure rather than simply accepting the next available option.</p></article>
+            <article><UserRound size={25} /><h3>Your circumstances have changed</h3><p>Changes in income, family commitments, employment, expenses or future plans may mean your current mortgage no longer works as well as it once did.</p></article>
+            <article><CircleDollarSign size={25} /><h3>You want greater flexibility</h3><p>You may want to reconsider repayment structure, additional repayments, loan splits or other features depending on your needs.</p></article>
+            <article><BriefcaseBusiness size={25} /><h3>You have other debts</h3><p>Changes to your wider borrowing may sometimes justify reviewing how different debts are structured.</p></article>
+            <article><Home size={25} /><h3>You are planning ahead</h3><p>Future plans such as moving, investing, renovating or changing employment can affect what you need from your mortgage.</p></article>
+            <article><ShieldCheck size={25} /><h3>You simply want a second look</h3><p>Even if nothing obvious is wrong, reviewing an existing mortgage can help confirm whether it still suits your circumstances.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection refinancingOptions">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <h2>Refinancing does not always mean changing lender</h2>
+            <p>Sometimes changing lender may be appropriate. In other situations, the better option may be to restructure your mortgage with your existing lender.</p>
+            <p>The important question is not simply, “Can I get a different rate?” It is whether a different arrangement would leave you in a better position after taking account of costs, flexibility, loan structure and your future plans.</p>
+          </div>
+          <div className="firstHomeDecisionGrid">
+            <article><h3>Refinancing</h3><p>Refinancing generally involves replacing your existing lending with a new arrangement, potentially with another lender.</p></article>
+            <article><h3>Restructuring</h3><p>Restructuring may involve changing the way your existing mortgage is organised without necessarily moving to a different lender.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection refinancingConsiderations">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <h2>Look beyond the advertised interest rate</h2>
+            <p>A lower headline rate can be attractive, but refinancing decisions should take account of the complete financial picture.</p>
+          </div>
+          <div className="nelsonFeatureGrid refinancingFeatureGrid">
+            <article><CircleDollarSign size={25} /><h3>Costs of changing</h3><p>There may be costs associated with altering or replacing existing lending. These need to be considered alongside any potential benefit.</p></article>
+            <article><Home size={25} /><h3>Loan structure</h3><p>Fixed and variable components, repayment arrangements and other features can affect how suitable a mortgage is for you.</p></article>
+            <article><ShieldCheck size={25} /><h3>Longer-term impact</h3><p>Reducing immediate repayments does not necessarily mean reducing the overall cost of borrowing, particularly if the loan term changes.</p></article>
+            <article><CheckCircle2 size={25} /><h3>Flexibility</h3><p>Consider how much flexibility you may need for additional repayments, future borrowing or changes in circumstances.</p></article>
+            <article><BriefcaseBusiness size={25} /><h3>Lender criteria</h3><p>A new lender will assess your circumstances according to its own requirements, even if you have successfully held a mortgage for many years.</p></article>
+            <article><UserRound size={25} /><h3>Your future plans</h3><p>A suitable arrangement should reflect where you expect your finances and property plans to go next, not only where they are today.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection firstHomeProcess">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro"><p className="eyebrow">A structured review</p><h2>How mortgage refinancing works</h2></div>
+          <ol className="nelsonProcessList firstHomeProcessList">
+            {refinancingProcess.map(([title, text], index) => <li key={title}><span aria-hidden="true">{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}
+          </ol>
+        </div>
+      </section>
+
+      <section className="nelsonSection refinancingDecision">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro">
+            <p className="eyebrow">A considered decision</p>
+            <h2>Is refinancing worth it?</h2>
+            <p>There is no universal answer. Refinancing can be worthwhile when the benefits of changing outweigh the financial and practical costs involved.</p>
+            <p>In some cases, a review may show that your existing mortgage remains suitable. That is still useful information. The aim is to make a considered decision rather than changing lender simply because another option initially appears cheaper.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection nelsonAdviser">
+        <div className="nelsonContainer nelsonAdviserGrid">
+          <img src={assets.bob} alt="Bob Llewellyn, mortgage adviser at Assured Group" />
+          <div>
+            <p className="eyebrow">Personal mortgage advice</p>
+            <h2>Review your mortgage with the Assured team</h2>
+            <p>Assured Group is based in Nelson and provides mortgage advice to clients locally and elsewhere in New Zealand.</p>
+            <p>Clients currently work directly with Bob Llewellyn, a Nelson-based financial adviser and mortgage broker with more than 15 years' experience in financial services in New Zealand and the UK.</p>
+            <p>The aim is not to change your mortgage for the sake of it. It is to understand what you have now, what you need next and whether a different arrangement would genuinely improve your position.</p>
+            <Link className="nelsonTextLink" href="/about-bob/">Meet Bob <ArrowRight size={15} /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection lifeInsuranceRelated">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro"><h2>More mortgage advice</h2></div>
+          <div className="lifeInsuranceRelatedGrid">
+            <article className="nelsonServiceCard"><h3>Mortgage Broker Nelson</h3><p>Personal mortgage and home loan advice for borrowers in Nelson and throughout New Zealand.</p><Link href="/mortgages/nelson/">Mortgage advice in Nelson <ArrowRight size={15} /></Link></article>
+            <article className="nelsonServiceCard"><h3>Investment Property</h3><p>Explore mortgage options when buying or refinancing an investment property.</p><Link href="/mortgages/investment-property/">Investment property finance <ArrowRight size={15} /></Link></article>
+            <article className="nelsonServiceCard"><h3>Mortgage Protection</h3><p>Consider how mortgage commitments could be managed if illness or injury affected your income.</p><Link href="/insurance/mortgage-protection/">Mortgage protection advice <ArrowRight size={15} /></Link></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonSection nelsonFaq">
+        <div className="nelsonContainer">
+          <div className="nelsonSectionIntro"><h2>Mortgage refinancing questions</h2></div>
+          <div className="nelsonFaqList">
+            {refinancingFaqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="nelsonFinalCta">
+        <div className="nelsonContainer"><div className="nelsonCtaPanel">
+          <h2>Is your current mortgage still right for you?</h2>
+          <p>Start with a review of what you have now, what has changed and what you need from your mortgage next.</p>
+          <div className="heroActions">
+            <Link href="/contact/" className="button primary">Review your mortgage <ArrowRight size={16} /></Link>
+            <a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call 0800 500 223</a>
+          </div>
+        </div></div>
+      </section>
+    </>
+  );
+}
+
+const investmentPropertyProcess = [
+  ["Understand what you want to achieve", "We begin with your existing financial position, the property investment you are considering and your longer-term plans."],
+  ["Review your borrowing position", "We look at your current lending, income, financial commitments and available deposit or equity."],
+  ["Consider appropriate lending options", "We work through mortgage options that may be appropriate and explain the differences in practical terms."],
+  ["Prepare the application", "If you decide to proceed, Assured helps organise the information required and works with you through the lending application."],
+  ["Review as your plans develop", "Investment lending is not necessarily a one-off decision. We can help review your arrangements when properties, borrowing or financial priorities change."],
+];
+
+const investmentPropertyFaqs = [
+  ["How much can I borrow for an investment property?", "The amount depends on your individual circumstances and the lender's criteria. Your income, existing debts, household expenses, current mortgages, deposit or equity and other relevant information can all affect borrowing capacity."],
+  ["Can I use equity in my home to buy an investment property?", "Existing property equity may form part of a lending strategy, but whether and how it can be used depends on the value of the property, existing borrowing, lender requirements and your wider financial circumstances."],
+  ["Is an investment property mortgage different from a home mortgage?", "The underlying lending may share many characteristics, but lenders can assess investment-property borrowing differently because the purpose, property, existing commitments and sources of income may differ."],
+  ["Should I speak to a mortgage adviser before looking for an investment property?", "It can be useful to understand your likely borrowing position before committing to a property. This may help you set a realistic purchase range and identify lending issues earlier."],
+  ["Can Assured refinance an existing investment property mortgage?", "Yes. Existing investment lending can be reviewed to consider whether its structure and lender still suit your circumstances and future plans."],
+  ["Does Assured provide property investment or tax advice?", "Assured's role on this page is mortgage and lending advice. Property investment, legal and tax decisions may require advice from appropriately qualified specialists."],
+  ["Do I need to be in Nelson?", "No. Assured Group is based in Nelson but can work with mortgage clients elsewhere in New Zealand."],
+];
+
+function InvestmentPropertyPage() {
+  return (
+    <>
+      <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><Link href="/">Home</Link></li><li><Link href="/mortgages/">Mortgages</Link></li><li aria-current="page">Investment Property</li></ol></nav>
+
+      <section className="hero firstHomeHero" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.7) 52%, rgba(255,255,255,.18)), url("${assets.financeHero}")` }}>
+        <div className="heroInner">
+          <p className="eyebrow">Property investment finance</p><h1>Investment Property Mortgage Advice in Nelson</h1>
+          <p>Financing an investment property can involve different considerations from arranging a mortgage for your own home. Your existing borrowing, equity, income, rental expectations and longer-term plans can all affect the options available.</p>
+          <p className="hubHeroSupporting">Assured Group helps property investors understand their borrowing position, consider appropriate lending structures and work through the mortgage application process.</p>
+          <div className="heroActions"><Link href="/contact/" className="button primary">Talk to a mortgage adviser <ArrowRight size={16} /></Link><a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call us</a></div>
+        </div>
+      </section>
+
+      <section className="nelsonSection"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><p className="eyebrow">Understand the whole borrowing picture</p><h2>Investment property lending can be more complex</h2><p>Buying an investment property is not simply a matter of taking out another home loan. A lender may need to consider your existing mortgage, other debts, income, expenses, available equity and the financial characteristics of the proposed investment.</p><p>Good mortgage advice can help you understand how those elements fit together before you become committed to a particular purchase.</p></div>
+        <div className="nelsonFeatureGrid">
+          <article><CircleDollarSign size={25} /><h3>Your existing borrowing</h3><p>Current mortgages and other financial commitments form part of the wider lending assessment.</p></article>
+          <article><Home size={25} /><h3>Your available equity</h3><p>If you already own property, its value and the lending secured against it may affect the options available to you.</p></article>
+          <article><BriefcaseBusiness size={25} /><h3>The investment itself</h3><p>The property, expected rental income and purpose of the borrowing may also form part of a lender's assessment.</p></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection investorNeeds"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><h2>Advice for new and existing property investors</h2><p>Your financing needs can be different depending on whether you are buying your first rental property, adding to an existing portfolio or reviewing borrowing you already have.</p></div>
+        <div className="lifeInsuranceRelatedGrid">
+          <article className="nelsonServiceCard"><h3>Buying your first investment property</h3><p>Understand how investment lending differs from your home mortgage and what information a lender may require.</p></article>
+          <article className="nelsonServiceCard"><h3>Expanding a property portfolio</h3><p>Consider how additional borrowing fits alongside your existing properties, loans and financial commitments.</p></article>
+          <article className="nelsonServiceCard"><h3>Reviewing existing investment lending</h3><p>If you already own investment property, we can review whether your current lending structure still suits your circumstances and plans.</p><Link href="/mortgages/refinancing/">Mortgage refinancing advice <ArrowRight size={15} /></Link></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><h2>Loan structure matters</h2><p>When more than one property and more than one loan are involved, the way borrowing is structured can become increasingly important.</p><p>A mortgage adviser can help you understand the lending arrangements available and the practical implications of different structures. The aim is to find an arrangement that reflects your current position while taking account of what you may want to do next.</p></div>
+        <div className="nelsonFeatureGrid">
+          <article><CheckCircle2 size={25} /><h3>Keep borrowing understandable</h3><p>As lending becomes more complex, having a clear view of what each loan relates to can make financial decisions easier to manage.</p></article>
+          <article><ShieldCheck size={25} /><h3>Plan for future changes</h3><p>Consider whether the lending arrangement gives you appropriate flexibility if you later buy, sell, refinance or alter your investment strategy.</p></article>
+          <article><CircleDollarSign size={25} /><h3>Understand lender requirements</h3><p>Different lenders can apply different criteria, so the structure available to one borrower may not be appropriate or available to another.</p></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection borrowingCapacity"><div className="nelsonContainer"><div className="nelsonSectionIntro">
+        <p className="eyebrow">Your individual position</p><h2>How much can you borrow for an investment property?</h2>
+        <p>There is no single borrowing figure that applies to every investor. Lenders assess applications according to their own criteria and your individual financial circumstances.</p>
+        <p>Factors may include your income, existing debts and mortgage commitments, household spending, available deposit or equity, and relevant income associated with the property.</p>
+        <p>We can help you understand your likely borrowing position before you make major decisions about a purchase.</p>
+      </div></div></section>
+
+      <section className="nelsonSection firstHomeProcess"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><p className="eyebrow">From idea to lending</p><h2>How investment property mortgage advice works</h2></div>
+        <ol className="nelsonProcessList firstHomeProcessList">{investmentPropertyProcess.map(([title, text], index) => <li key={title}><span aria-hidden="true">{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
+      </div></section>
+
+      <section className="nelsonSection investmentAdviceBoundary"><div className="nelsonContainer"><div className="nelsonSectionIntro">
+        <p className="eyebrow">The role of mortgage advice</p><h2>Finance is only one part of an investment decision</h2>
+        <p>Mortgage advice can help you understand the borrowing side of a property investment, but it does not replace legal, accounting, tax or property-investment advice.</p>
+        <p>Before proceeding, you may also need appropriate advice from other professionals about the property, ownership arrangements, tax implications and your wider investment strategy.</p>
+        <p>Our role is to help make the lending side understandable and ensure that your mortgage decisions reflect the financial circumstances you discuss with us.</p>
+      </div></div></section>
+
+      <section className="nelsonSection nelsonAdviser"><div className="nelsonContainer nelsonAdviserGrid">
+        <img src={assets.bob} alt="Bob Llewellyn, mortgage adviser at Assured Group" />
+        <div><p className="eyebrow">Personal mortgage advice</p><h2>Property investment finance from the Assured team</h2><p>Assured Group is based in Nelson and provides mortgage and finance advice to clients locally and throughout New Zealand.</p><p>Clients currently work directly with Bob Llewellyn, a Nelson-based financial adviser and mortgage broker with more than 15 years' experience in financial services in New Zealand and the UK.</p><p>Whether you are considering your first investment property or reviewing an existing portfolio, the starting point is understanding what you want the lending to achieve.</p><Link className="nelsonTextLink" href="/about-bob/">Meet Bob <ArrowRight size={15} /></Link></div>
+      </div></section>
+
+      <section className="nelsonSection lifeInsuranceRelated"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><h2>More mortgage and finance advice</h2></div>
+        <div className="lifeInsuranceRelatedGrid">
+          <article className="nelsonServiceCard"><h3>Mortgage Broker Nelson</h3><p>Personal mortgage and home loan advice for borrowers in Nelson and elsewhere in New Zealand.</p><Link href="/mortgages/nelson/">Mortgage advice in Nelson <ArrowRight size={15} /></Link></article>
+          <article className="nelsonServiceCard"><h3>Mortgage Refinancing</h3><p>Review existing home or investment property borrowing and consider whether a different arrangement may suit you better.</p><Link href="/mortgages/refinancing/">Refinancing advice <ArrowRight size={15} /></Link></article>
+          <article className="nelsonServiceCard"><h3>Commercial Finance</h3><p>Looking for finance for a business or commercial property rather than a residential investment?</p><Link href="/business/commercial-finance/">Commercial finance advice <ArrowRight size={15} /></Link></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection nelsonFaq"><div className="nelsonContainer"><div className="nelsonSectionIntro"><h2>Investment property mortgage questions</h2></div><div className="nelsonFaqList">{investmentPropertyFaqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+
+      <section className="nelsonFinalCta"><div className="nelsonContainer"><div className="nelsonCtaPanel">
+        <h2>Considering an investment property?</h2><p>Talk to Assured about your existing borrowing, available equity and what you want to achieve before making your next property finance decision.</p>
+        <div className="heroActions"><Link href="/contact/" className="button primary">Talk to a mortgage adviser <ArrowRight size={16} /></Link><a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call 0800 500 223</a></div>
+      </div></div></section>
+    </>
+  );
+}
+
+const bridgingLoanProcess = [
+  ["Understand both property transactions", "We start with the property you currently own, your existing mortgage, the property you want to buy and the expected timing of each transaction."],
+  ["Review your financial position", "We consider income, existing borrowing, available equity and the additional finance that may be required during the bridging period."],
+  ["Consider available lending options", "We work through appropriate finance options and explain the relevant lender requirements, costs and trade-offs."],
+  ["Plan for the property sale", "The proposed sale of your existing property forms an important part of the overall financing plan, so we consider how different sale outcomes could affect your position."],
+  ["Arrange the longer-term mortgage", "Once the bridging period ends, the remaining borrowing needs to work as an appropriate longer-term mortgage for your new property."],
+];
+
+const bridgingLoanFaqs = [
+  ["What is a bridging loan?", "Bridging finance is temporary borrowing that can help cover a funding gap between property transactions, such as buying a new home before the sale of an existing property has completed."],
+  ["Can I buy a new home before selling my current property?", "It may be possible, depending on your financial circumstances, available equity, the properties involved and the lender's criteria. Bridging finance is one option that may be considered."],
+  ["How much can I borrow with bridging finance?", "There is no single amount that applies to everyone. Lenders assess the properties involved, existing borrowing, income, equity, affordability and other relevant circumstances according to their own criteria."],
+  ["What happens if my current home takes longer to sell?", "This is an important risk to consider before arranging bridging finance. The effect depends on the lending arrangement and your circumstances, which is why the financing plan should consider a slower-than-expected sale."],
+  ["Is bridging finance more expensive than a normal mortgage?", "The cost depends on the particular lending arrangement. Interest, fees, the amount borrowed and the length of time the bridging finance is required should all be considered before deciding whether it is appropriate."],
+  ["Do I need to have already sold my existing home?", "Not necessarily. The options available will depend on your circumstances and the lender's requirements. Having greater certainty around the existing property sale may, however, affect the overall lending assessment."],
+  ["Can Assured help if I am buying outside Nelson?", "Yes. Assured Group is based in Nelson but can work with mortgage clients elsewhere in New Zealand."],
+];
+
+function BridgingLoansPage() {
+  return (
+    <>
+      <nav className="breadcrumbs" aria-label="Breadcrumb"><ol><li><Link href="/">Home</Link></li><li><Link href="/mortgages/">Mortgages</Link></li><li aria-current="page">Bridging Loans</li></ol></nav>
+
+      <section className="hero firstHomeHero" style={{ backgroundImage: `linear-gradient(90deg, rgba(255,255,255,.94), rgba(255,255,255,.7) 52%, rgba(255,255,255,.18)), url("${assets.financeHero}")` }}><div className="heroInner">
+        <p className="eyebrow">Finance between one property and the next</p><h1>Bridging Loan Advice in Nelson</h1>
+        <p>Found the property you want to buy before your current home has sold? Bridging finance may provide temporary funding to help manage the gap between the two transactions.</p>
+        <p className="hubHeroSupporting">Assured Group helps you understand how bridging finance may work in your circumstances, what lenders are likely to consider and the financial implications of carrying additional borrowing for a period of time.</p>
+        <div className="heroActions"><Link href="/contact/" className="button primary">Talk to a mortgage adviser <ArrowRight size={16} /></Link><a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call us</a></div>
+      </div></section>
+
+      <section className="nelsonSection"><div className="nelsonContainer"><div className="nelsonSectionIntro">
+        <p className="eyebrow">Managing the timing gap</p><h2>What is a bridging loan?</h2>
+        <p>Bridging finance is short-term lending designed to help when the timing of one property transaction does not line up with another.</p>
+        <p>A common situation is buying a new home before the sale of your existing property has completed. For a period, you may therefore need finance that takes account of both properties and your existing borrowing.</p>
+        <p>Whether bridging finance is available or appropriate depends on your financial circumstances, the properties involved, your existing lending and the criteria of the lender.</p>
+      </div></div></section>
+
+      <section className="nelsonSection bridgingSituations"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><h2>When might bridging finance be considered?</h2><p>Bridging finance can be relevant when a property purchase and sale cannot conveniently be completed at the same time.</p></div>
+        <div className="nelsonFeatureGrid">
+          <article><Home size={25} /><h3>You've found your next home</h3><p>You are ready to buy but your existing property has not yet completed its sale.</p></article>
+          <article><CheckCircle2 size={25} /><h3>Settlement dates do not align</h3><p>Your sale and purchase are both progressing, but the timing leaves a temporary funding gap.</p></article>
+          <article><CircleDollarSign size={25} /><h3>You want to understand your options before selling</h3><p>You are considering a move and want to understand what may be financially possible before deciding how to sequence the transactions.</p></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><h2>How bridging finance works</h2><p>The precise structure depends on the lender and your circumstances, but bridging finance generally needs to take account of your current property, the property you want to buy and the borrowing required during the period between transactions.</p><p>Once the existing property is sold, the sale proceeds can then be applied as agreed towards the lending, leaving the longer-term mortgage arrangement for the new property.</p></div>
+        <div className="nelsonFeatureGrid">
+          <article><Home size={25} /><h3>Your current property</h3><p>The value of your existing property and the mortgage already secured against it form part of the financial picture.</p></article>
+          <article><Home size={25} /><h3>Your new property</h3><p>The purchase price and borrowing required for the new property also need to be considered.</p></article>
+          <article><ArrowRight size={25} /><h3>Your route out of bridging finance</h3><p>A lender will want to understand how the temporary borrowing is expected to be reduced or repaid, commonly through the sale of an existing property.</p></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection bridgingConsiderations"><div className="nelsonContainer">
+        <div className="nelsonSectionIntro"><p className="eyebrow">Look at the whole transaction</p><h2>What should you consider before using a bridging loan?</h2><p>Bridging finance can solve a timing problem, but it also introduces additional borrowing and uncertainty. It is important to consider what happens if the sale takes longer than expected or your assumptions change.</p></div>
+        <div className="firstHomeDecisionGrid">
+          <article><h3>Can you manage the temporary borrowing?</h3><p>For a period, the financial arrangement may need to take account of borrowing connected with both properties.</p></article>
+          <article><h3>What if your property takes longer to sell?</h3><p>A sensible plan should consider the possibility that the sale does not happen as quickly as expected.</p></article>
+          <article><h3>What if the sale price changes?</h3><p>The amount ultimately received from your existing property can affect the longer-term borrowing required.</p></article>
+          <article><h3>What are the costs?</h3><p>Interest, lender charges and other transaction costs should be considered when deciding whether bridging finance is appropriate.</p></article>
+        </div>
+      </div></section>
+
+      <section className="nelsonSection bridgingDecision"><div className="nelsonContainer"><div className="nelsonSectionIntro">
+        <h2>Should you sell first or buy first?</h2><p>Selling first can provide greater certainty about the amount available for your next purchase, but it may create practical difficulties if the right property becomes available before you are ready to buy.</p><p>Buying first may give you more flexibility over the move, but it can expose you to additional borrowing and uncertainty while the existing property remains unsold.</p><p>There is no answer that suits every borrower. Mortgage advice can help you understand the financial implications of each approach before deciding which risks you are comfortable taking.</p>
+      </div></div></section>
+
+      <section className="nelsonSection firstHomeProcess"><div className="nelsonContainer"><div className="nelsonSectionIntro"><p className="eyebrow">Planning the move</p><h2>How we help with bridging finance</h2></div><ol className="nelsonProcessList firstHomeProcessList">{bridgingLoanProcess.map(([title, text], index) => <li key={title}><span aria-hidden="true">{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol></div></section>
+
+      <section className="nelsonSection bridgingAdvice"><div className="nelsonContainer"><div className="nelsonSectionIntro">
+        <p className="eyebrow">Plan for uncertainty</p><h2>Bridging finance needs a clear plan</h2><p>Unlike an ordinary home purchase, bridging finance involves making decisions while the final outcome of another property transaction may still be uncertain.</p><p>That makes it particularly important to understand not only whether finance is available, but how the arrangement works if the sale takes longer, the sale price changes or other circumstances develop differently from expected.</p><p>Assured can help you model the lending side of the move and understand the risks before you decide whether bridging finance is appropriate for you.</p>
+      </div></div></section>
+
+      <section className="nelsonSection nelsonAdviser"><div className="nelsonContainer nelsonAdviserGrid"><img src={assets.bob} alt="Bob Llewellyn, mortgage adviser at Assured Group" /><div><p className="eyebrow">Personal mortgage advice</p><h2>Bridging finance advice from the Assured team</h2><p>Assured Group is based in Nelson and provides mortgage and lending advice to clients locally and elsewhere in New Zealand.</p><p>Clients currently work directly with Bob Llewellyn, a Nelson-based financial adviser and mortgage broker with more than 15 years' experience in financial services in New Zealand and the UK.</p><p>If you are considering buying before you sell, the starting point is understanding both transactions and whether the temporary borrowing is realistic for your circumstances.</p><Link className="nelsonTextLink" href="/about-bob/">Meet Bob <ArrowRight size={15} /></Link></div></div></section>
+
+      <section className="nelsonSection lifeInsuranceRelated"><div className="nelsonContainer"><div className="nelsonSectionIntro"><h2>More mortgage advice</h2></div><div className="lifeInsuranceRelatedGrid">
+        <article className="nelsonServiceCard"><h3>Mortgage Broker Nelson</h3><p>Personal mortgage advice for buying a home in Nelson and elsewhere in New Zealand.</p><Link href="/mortgages/nelson/">Mortgage advice in Nelson <ArrowRight size={15} /></Link></article>
+        <article className="nelsonServiceCard"><h3>Mortgage Refinancing</h3><p>Review existing borrowing and consider whether your mortgage should change as your circumstances develop.</p><Link href="/mortgages/refinancing/">Refinancing advice <ArrowRight size={15} /></Link></article>
+        <article className="nelsonServiceCard"><h3>Investment Property</h3><p>Understand borrowing and loan structure when buying or refinancing an investment property.</p><Link href="/mortgages/investment-property/">Investment property finance <ArrowRight size={15} /></Link></article>
+      </div></div></section>
+
+      <section className="nelsonSection nelsonFaq"><div className="nelsonContainer"><div className="nelsonSectionIntro"><h2>Bridging loan questions</h2></div><div className="nelsonFaqList">{bridgingLoanFaqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+
+      <section className="nelsonFinalCta"><div className="nelsonContainer"><div className="nelsonCtaPanel"><h2>Buying before you've sold?</h2><p>Talk to Assured about your current property, the home you want to buy and whether bridging finance could provide a workable route between the two.</p><div className="heroActions"><Link href="/contact/" className="button primary">Discuss bridging finance <ArrowRight size={16} /></Link><a className="button secondary" href="tel:0800500223"><Phone size={16} /> Call 0800 500 223</a></div></div></div></section>
+    </>
+  );
+}
+
 const insuranceHubServices = [
   ["Life Insurance", "Help protect the people who depend on you financially if you die.", "/insurance/life/", "Life insurance advice"],
   ["Health Insurance", "Understand options for private health cover and the differences between available policies.", "/insurance/health/", "Health insurance advice"],
@@ -1671,6 +2184,26 @@ function App() {
         description: "Looking for a mortgage broker in Nelson? Assured Group provides personal mortgage and home loan advice for first-home buyers, refinancing, investors and other borrowers in Nelson and across New Zealand.",
         canonical: "https://www.assuredgroup.co.nz/mortgages/nelson/",
       },
+      "/mortgages/first-home-buyers/": {
+        title: "First Home Buyer Mortgage Advice Nelson | Assured Group",
+        description: "Buying your first home? Get clear mortgage advice in Nelson from Assured Group. Understand borrowing, deposits, pre-approval and the home loan process.",
+        canonical: "https://www.assuredgroup.co.nz/mortgages/first-home-buyers/",
+      },
+      "/mortgages/refinancing/": {
+        title: "Mortgage Refinancing Advice Nelson | Assured Group",
+        description: "Mortgage refinancing advice in Nelson from Assured Group. Review your current home loan, compare options and consider whether refinancing or restructuring could suit your circumstances.",
+        canonical: "https://www.assuredgroup.co.nz/mortgages/refinancing/",
+      },
+      "/mortgages/investment-property/": {
+        title: "Investment Property Mortgage Advice Nelson | Assured Group",
+        description: "Investment property mortgage advice in Nelson from Assured Group. Understand borrowing, refinancing and loan structure when buying or holding a rental property.",
+        canonical: "https://www.assuredgroup.co.nz/mortgages/investment-property/",
+      },
+      "/mortgages/bridging-loans/": {
+        title: "Bridging Loan & Finance Advice Nelson | Assured Group",
+        description: "Bridging loan advice in Nelson from Assured Group. Understand temporary finance options when buying a new property before your existing property has sold.",
+        canonical: "https://www.assuredgroup.co.nz/mortgages/bridging-loans/",
+      },
       "/insurance/": {
         title: "Insurance Brokers & Advisers in Nelson | Assured Group",
         description: "Personal insurance advice in Nelson from Assured Group. Get help with life, health, trauma, income protection and other insurance needs.",
@@ -1732,6 +2265,10 @@ function App() {
   if (path === "/contact/") page = <ContactPage />;
   else if (path === "/disclosure/") page = <DisclosurePage />;
   else if (path === "/mortgages/nelson/") page = <NelsonMortgagePage />;
+  else if (path === "/mortgages/first-home-buyers/") page = <FirstHomeBuyersPage />;
+  else if (path === "/mortgages/refinancing/") page = <RefinancingPage />;
+  else if (path === "/mortgages/investment-property/") page = <InvestmentPropertyPage />;
+  else if (path === "/mortgages/bridging-loans/") page = <BridgingLoansPage />;
   else if (path === "/insurance/") page = <InsuranceHubPage />;
   else if (path === "/insurance/life/") page = <LifeInsurancePage />;
   else if (path === "/insurance/health/") page = <HealthInsurancePage />;
